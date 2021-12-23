@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Tugas Akhir Disjas 2021</title>
+        <title>221810422 - Tugas Akhir Disjas 2021</title>
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.svg" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
@@ -14,12 +14,14 @@
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <!-- Chart.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.2/chart.min.js"></script>
     </head>
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top" id="sideNav">
             <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                <span class="d-block d-lg-none">Mochamad Izza Zulfikar Sya'roni</span>
+                <span class="d-block d-lg-none">221810422 - Moch Izza Z S</span>
                 <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.jpg" alt="..." /></span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -59,7 +61,74 @@
             <section class="resume-section" id="dashboard">
                 <div class="resume-section-content">
                     <h2 class="mb-5" style="text-align:center;">Dashboard Utama <span class="text-primary">Hari Ini</span></h2>
-                    <div class="barchart"></div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        
+                        <div class="column" style="text-align:center;">
+                            <h3><span class="text-primary">Keberangkatan</span> Pesawat</h3>
+                            <h1 id="jmlDep"></h1>
+                            <table style="width:100%">
+                                <tr>
+                                    <td><h3>Terbang | </h3></td>
+                                    <td><h3><span class="text-primary">Terjadwal</span></h3></td>
+                                </tr>
+                                <tr>
+                                    <td><h2 id="jmlDeparted" class="text-primary"></h2></td>
+                                    <td><h2 id="jmlScheduled2"></h2></td>
+                                </tr>
+                                <tr>
+                                    <td><h3>Tertunda</h3></td>
+                                    <td><h3><span class="text-primary">| Dibatalkan</span></h3></td>
+                                </tr>
+                                <tr>
+                                    <td><h2 id="jmlDelayed2" class="text-warning"></h2></td>
+                                    <td><h2 id="jmlCanceled2" class="text-danger"></h2></td>
+                                </tr> 
+                                <tr>
+                                    <td><h3>Estimated | </h3></td>
+                                    <td><h3><span class="text-primary">Lainnya</span></h3></td>
+                                </tr>
+                                <tr>
+                                    <td><h2 id="jmlEstimated2" class="text-primary"></h2></td>
+                                    <td><h2 id="jmlUnknown2"></h2></td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div class="column" style="text-align:center;">
+                            <canvas id="myChart" width="500" height="500"></canvas>
+                        </div>
+                        
+                        <div class="column" style="text-align:center;">
+                            <h3><span class="text-secondary">Kedatangan</span> Pesawat</h3>
+                            <h1 id="jmlArr"></h1>
+                            <table style="width:100%">
+                                <tr>
+                                    <td><h3>Mendarat | </h3></td>
+                                    <td><h3><span class="text-secondary">Terjadwal</span></h3></td>
+                                </tr>
+                                <tr>
+                                    <td><h2 id="jmlLanded" class="text-secondary"></h2></td>
+                                    <td><h2 id="jmlScheduled"></h2></td>
+                                </tr>
+                                <tr>
+                                    <td><h3>Tertunda</h3></td>
+                                    <td><h3><span class="text-secondary">| Dibatalkan</span></h3></td>
+                                </tr>
+                                <tr>
+                                    <td><h2 id="jmlDelayed1" class="text-warning"></h2></td>
+                                    <td><h2 id="jmlCanceled" class="text-danger"></h2></td>
+                                </tr>   
+                                <tr>
+                                    <td><h3>Estimated | </h3></td>
+                                    <td><h3><span class="text-secondary">Lainnya</span></h3></td>
+                                </tr>
+                                <tr>
+                                    <td><h2 id="jmlEstimated" class="text-secondary"></h2></td>
+                                    <td><h2 id="jmlUnknown"></h2></td>
+                                </tr> 
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </section>
             <hr class="m-0" />
@@ -155,7 +224,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <!-- FlightRadar24 -->
+        <!-- FlightRadar24 & chart-->
         <script src="js/index.js"></script>
     </body>
 </html>
